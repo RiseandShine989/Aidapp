@@ -8,13 +8,13 @@ max_injuries = 1000000
 count = 0
 injuries = 1
 #Since distribution of 1-3 3-5 5-7 and 7-9 is same we first check if we can iterate over all 1-3 , 3-5 elements so that we maximize our count while minimizing the damage and then check for greater 
-while (health > 1 && max_injuries < 1000000): 
+while (health > 1 and max_injuries < 1000000): 
 	for index, row in df.iterrows():
 		if(row['Damage']<= 5)
 			health = health - row['Damage']
 			injuries = injuries * row['Damage']
 			count += 1
-while (health > 1 && max_injuries < 1000000): 
+while (health > 1 and max_injuries < 1000000): 
 	for index, row in df.iterrows():
 		if(row['Damage']> 5)
 			health = health - row['Damage']
